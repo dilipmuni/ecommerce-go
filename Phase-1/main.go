@@ -40,8 +40,8 @@ func main() {
 
 	// r.POST("/user/:id/order", uc.PlaceOrder)
 
-	http.ListenAndServe("172.18.0.3:9012", r)
-	http.ListenAndServe("172.18.0.3:9013", l)
+	go http.ListenAndServe("172.18.0.3:9012", r)
+	go http.ListenAndServe("172.18.0.3:9013", l)
 	http.ListenAndServe("172.18.0.3:9014", m)
 }
 func getSession() *mgo.Session {
